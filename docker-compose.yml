@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  mfe-hello:
+    build:
+      context: ./mfe-hello
+    ports:
+      - "3000:80"
+    container_name: mfe-hello
+    networks:
+      - lite-compass-net
+
+  host-app:
+    build:
+      context: ./host-app
+    ports:
+      - "5173:80"
+    container_name: host-app
+    networks:
+      - lite-compass-net
+    depends_on:
+      - mfe-hello
+
+networks:
+  lite-compass-net:
+    driver: bridge
