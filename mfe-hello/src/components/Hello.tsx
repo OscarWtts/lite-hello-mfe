@@ -1,5 +1,6 @@
 const Hello = () => {
-  return <div>Hello from lite-hello MFE! 🎉</div>;
+  const message = import.meta.env.VITE_HELLO_MESSAGE ?? "Hello from lite-hello MFE! 🎉";
+  return <div>{message}</div>;
 };
 
 export default Hello;
