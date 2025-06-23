@@ -1,0 +1,16 @@
+{
+  "name": "lite-hello-mfe-root",
+  "private": true,
+  "workspaces": [
+    "host-app",
+    "mfe-hello"
+  ],
+  "scripts": {
+    "install": "yarn workspaces focus",
+    "dev": "yarn workspace host-app dev",
+    "dev:mfe-hello": "yarn workspace mfe-hello dev",
+    "dev:host": "yarn workspace host-app dev",
+    "build": "yarn workspace mfe-hello build && yarn workspace host-app build",
+    "lint": "yarn workspace mfe-hello lint && yarn workspace host-app lint"
+  }
+}
