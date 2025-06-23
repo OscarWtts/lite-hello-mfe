@@ -25,4 +25,7 @@ export default defineConfig({
     outDir: "dist",
     assetsDir: '',
   },
+  preview: {
+    port: 3000
+  },
 });
