@@ -11,6 +11,12 @@
     "dev:mfe-hello": "yarn workspace mfe-hello preview",
     "dev:host": "yarn workspace host-app dev",
     "build": "yarn workspace mfe-hello build && yarn workspace host-app build",
-    "lint": "yarn workspace mfe-hello lint && yarn workspace host-app lint"
+    "lint": "yarn workspace mfe-hello lint && yarn workspace host-app lint",
+    "all-local": "yarn build && concurrently -k \"yarn workspace mfe-hello preview\" \"yarn workspace host-app preview\"",
+    "dev:all": "concurrently -k \"yarn workspace mfe-hello dev\" \"yarn workspace host-app dev\"",
+    "docker:up": "docker compose up --build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
   }
 }
